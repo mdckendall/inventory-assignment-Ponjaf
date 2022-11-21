@@ -51,8 +51,34 @@ class Main {
           Items.removeIf(n -> n.serialNumber.equals(replacementString));
           break;
 
+        case 3:
+          
+          sc.nextLine();
+          System.out.println
+            ("Enter the serial number of the item to change:");
+          String inputString = sc.nextLine();
+          for (Inventory i : Items) {
+            if (i.serialNumber.equals(inputString)) {
+              System.out.println
+                ("Enter the new name:");
+              i.name = sc.nextLine();
+              System.out.println
+                ("Enter the new value in dollars (whole number):");
+              i.value = sc.nextInt();
+            }
+          }
+          sc.nextLine();
+          break;
+          
+        case 4:
+          
+          sc.nextLine();
+          for (Inventory i : Items) {
+            System.out.println
+              (i.name + "," + i.serialNumber + "," + i.value);
+          }
+          
 
-        
       }
             System.out.println("Press 1 to add an item.");
       System.out.println("Press 2 to delete an item.");
